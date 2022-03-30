@@ -10,7 +10,7 @@ public class Dev {
     private Set<Event> inscribedEvents = new LinkedHashSet<>();
     private Set<Event> completedEvents = new LinkedHashSet<>();
 
-    public void scribeBootcamp(Bootcamp bootcamp) {
+    public void inscribeBootcamp(Bootcamp bootcamp) {
         this.inscribedEvents.addAll(bootcamp.getEvent());
         bootcamp.getScribedDevs().add(this);
     }
@@ -28,6 +28,30 @@ public class Dev {
                 .stream()
                 .mapToDouble(Event::calculateXp)
                 .sum();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Set<Event> getInscribedEvents() {
+        return inscribedEvents;
+    }
+
+    public void setInscribedEvents(Set<Event> inscribedEvents) {
+        this.inscribedEvents = inscribedEvents;
+    }
+
+    public Set<Event> getCompletedEvents() {
+        return completedEvents;
+    }
+
+    public void setCompletedEvents(Set<Event> completedEvents) {
+        this.completedEvents = completedEvents;
     }
 
     @Override

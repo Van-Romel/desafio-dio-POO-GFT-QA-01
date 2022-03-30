@@ -12,6 +12,17 @@ public class Bootcamp extends Event {
     private Set<Dev> scribedDevs = new HashSet<>();
     private Set<Event> event = new HashSet<>();
 
+    public Bootcamp(String title, String description, Set<Dev> scribedDevs, Set<Event> event) {
+        super(title, description);
+        this.scribedDevs = scribedDevs;
+        this.event = event;
+    }
+
+    public Bootcamp(Set<Dev> scribedDevs, Set<Event> event) {
+        this.scribedDevs = scribedDevs;
+        this.event = event;
+    }
+
     public LocalDate getInitDate() {
         return initDate;
     }
