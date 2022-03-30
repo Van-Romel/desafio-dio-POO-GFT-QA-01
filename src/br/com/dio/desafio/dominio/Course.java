@@ -1,6 +1,6 @@
 package br.com.dio.desafio.dominio;
 
-public class Course extends Event{
+public class Course extends Event {
 
     private int workload;
 
@@ -11,6 +11,11 @@ public class Course extends Event{
 
     public Course() {
         super();
+    }
+
+    @Override
+    public Double calculateXp() {
+        return XP_DEFAULT * this.workload;
     }
 
     public int getWorkload() {
